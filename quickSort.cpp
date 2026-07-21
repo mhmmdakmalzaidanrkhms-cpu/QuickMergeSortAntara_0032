@@ -34,3 +34,12 @@ void input()   //membuat prosedur input
     }
 }
 
+void swap(int x, int y) //membuat prosedur swap
+{
+    int temp = arr[x];
+
+    arr[x] = arr[y];
+    arr[y] = temp;
+    mov_count++;
+}
+
