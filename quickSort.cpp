@@ -105,3 +105,28 @@ void output()
 
 
 
+int main()
+{
+    char ch;
+
+    do
+    {
+        input();
+        quicksort(0, n - 1);
+        output();
+
+        cout << "\n\nIngin Melanjutkan? (y/t) : ";
+        cin >> ch;
+
+        if (ch == 't' || ch == 'T')
+        {
+            break;
+        }
+
+        system("pause");
+        system("cls");
+
+    } while (true);
+
+    return 0;
+}
