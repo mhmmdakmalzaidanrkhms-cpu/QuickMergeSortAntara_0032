@@ -43,3 +43,65 @@ void swap(int x, int y) //membuat prosedur swap
     mov_count++;
 }
 
+void quicksort(int low, int high)
+{
+    int temp;
+    int pivot, i, j;
+
+    if (low > high)
+    {
+        return;
+    }
+
+    pivot = arr[low];
+    i = low + 1;
+    j = high;
+
+    while (i <= j)
+    {
+        while ((arr[i] <= pivot) && (i <= high))
+        {
+            i++;
+            cmp_count++;
+        }
+        cmp_count++;
+
+        while ((arr[j] > pivot) && (j >= low))
+        {
+            j--;
+            cmp_count++;
+        }
+        cmp_count++;
+
+        if (i < j)
+        {
+            swap(i, j);
+        }
+    }
+
+    if (low < j)
+    {
+        swap(low, j);
+    }
+
+    quicksort(low, j - 1);
+    quicksort(j + 1, high);
+}
+
+void output()
+{
+    cout << "\n------------------------" << endl;
+    cout << "\nInputkan Isi element array" << endl;
+    cout << "\n------------------------" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << "\n\njumlah perbandingan : " << cmp_count << endl;
+    cout << "Jumlah Pergerakan Data : " << mov_count << endl;
+}
+
+
+
